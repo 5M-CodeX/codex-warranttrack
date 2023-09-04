@@ -15,8 +15,6 @@ The CodeX Warrant Tracker System is a resource for FiveM servers that allows pla
   - [Tracking a Player](#tracking-a-player)
   - [Untracking All Players](#untracking-all-players)
 - [Configuration](#configuration)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Installation
 
