@@ -1,5 +1,7 @@
 # CodeX Warrant Tracker
 
+![SugarTank (1)](https://github.com/5M-CodeX/codex-warranttrack/assets/112611821/a454478b-01d8-423e-b6e3-27b688b3fc27)
+
 The CodeX Warrant Tracker System is a resource for FiveM servers that allows players to track other players using blips and notifications. This resource is designed to enhance the gameplay experience on your server.
 
 ## Features
