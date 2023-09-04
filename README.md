@@ -1,4 +1,4 @@
-# codex-track
+# codex-warranttrack
 This script allows players in Grand Theft Auto V roleplay servers to track other players using blips on the map. It also adds a red pulsing ring around the tracked player's blip for added visibility.
 
 ## Features
