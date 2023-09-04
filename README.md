@@ -1,39 +1,65 @@
-# codex-warranttrack
-This script allows players in Grand Theft Auto V roleplay servers to track other players using blips on the map. It also adds a red pulsing ring around the tracked player's blip for added visibility.
+# CodeX Warrant Tracker
+
+The CodeX Warrant Tracker System is a resource for FiveM servers that allows players to track other players using blips and notifications. This resource is designed to enhance the gameplay experience on your server.
 
 ## Features
 
-- Use the `/track [playerid]` command to start tracking a player.
-- Yellow GPS waypoint is set to the tracked player's location.
-- A red pulsing ring appears around the tracked player's blip on the map.
+- Track other players using blips on the minimap.
+- Send notifications to tracked players when they are being tracked.
+- Customizable configuration to tailor the system to your server's needs.
 
-## Configuration
+## Table of Contents
 
-To customize the script's behavior, you can modify the configuration values in the `config.lua` file:
-
-- `enable_blips`: Enable or disable blips on the map.
-- Blip settings (blip scale, color, etc.).
-- `enable_tracking`: Enable or disable player tracking.
-- Tracking settings (blip scale, red ring color, pulsing speed, etc.).
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Tracking a Player](#tracking-a-player)
+  - [Untracking All Players](#untracking-all-players)
+- [Configuration](#configuration)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Installation
 
-1. Place the `codex-track` in your server's resources folder.
-2. Ensure you have the `ND_Core` module imported correctly as per your server setup.
-3. Add the resource to your `server.cfg` file.
-4. ensure your_resource_name
-5. Restart your server to apply the changes.
+1. Download the resource files from this repository.
+
+2. Place the `tracking` folder into your FiveM server's `resources` directory.
+
+3. Add `start tracking` to your server.cfg file to ensure the resource is loaded when the server starts.
+
+4. Configure the settings in the `config.lua` file located in the `tracking` folder to your preferences (see the [Configuration](#configuration) section for details).
 
 ## Usage
 
-In the game, press F1 or open the console.
-Type /track [playerid] to start tracking a player by their ID.
-A yellow GPS waypoint will be set to the tracked player's location.
-A red pulsing ring will appear around the tracked player's blip on the map.
-To stop tracking, type /track again.
+### Tracking a Player
 
-## Issues and Support
-If you encounter any issues or need assistance with this script, please feel free to create an issue on the GitHub repository.
+To track a player, use the following in-game command:
+`/track [playerID]`
+Replace `[playerID]` with the ID of the player you want to track. This command will create a blip on the minimap for the tracked player and send them a notification.
 
-Credits
-This script was created by [TheStoicBear](https://github.com/TheStoicBear) and is provided under the MIT License.
+### Untracking All Players
+
+To remove all tracked blips, use the following in-game command:
+`/untrack`
+
+This command will remove all blips created by the `/track` command.
+
+## Configuration
+
+You can customize the behavior of the tracking system by editing the `config.lua` file located in the `tracking` folder. Here are some of the key configuration options:
+
+```lua
+Config = {}
+
+-- Blip settings
+Config.blipSprite = 459  -- The sprite ID of the blip to use for tracked players.
+Config.blipScale = 1.0   -- The scale of the blip.
+Config.blipColor = 1     -- The color of the blip.
+Config.blipShortRange = true  -- Set to true to make blips short-range.
+Config.blipNotificationText = "A Warrant has been issued for your arrest. You may be tracked."
+
+-- Messages
+Config.invalidPlayerIDMessage = "Invalid player ID."
+Config.usageMessage = "Usage: /track [playerID]"
+Config.untrackMessage = "All tracked blips have been removed."
+```
+Feel free to adjust these settings to fit your server's requirements.
