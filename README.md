@@ -36,12 +36,16 @@ To track a player, use the following in-game command:
 `/track [playerID]`
 Replace `[playerID]` with the ID of the player you want to track. This command will create a blip on the minimap for the tracked player and send them a notification.
 
+- **Ace Permissions Integration:** Only players with the Ace permission `codex:warrant.track` are allowed to use this command.
+
 ### Untracking All Players
 
 To remove all tracked blips, use the following in-game command:
 `/untrack`
 
 This command will remove all blips created by the `/track` command.
+
+- **Ace Permissions Integration:** Only players with the Ace permission `codex:warrant.untrack` are allowed to use this command.
 
 ## Configuration
 
