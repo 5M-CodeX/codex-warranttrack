@@ -1,3 +1,6 @@
+local currentBlips = {}
+
+
 -- Register the /track command
 RegisterCommand('track', function(source, args, rawCommand)
     if #args == 1 then
@@ -48,8 +51,9 @@ RegisterCommand('track', function(source, args, rawCommand)
     end
 end, false)
 
--- Register the /untrack command
 RegisterCommand('untrack', function(source, args, rawCommand)
+    -- Check if the player has permission to use /untrack
+    if IsPlayerAceAllowed(source, "codex:warrant.untrack") then
         for i = #currentBlips, 1, -1 do
             local b = currentBlips[i]
             if b and DoesBlipExist(b) then
@@ -57,7 +61,7 @@ RegisterCommand('untrack', function(source, args, rawCommand)
             end
             table.remove(currentBlips, i)
         end
-        
+
         -- Show a notification to the source player for removing all tracked blips
         SetNotificationTextEntry("STRING")
         AddTextComponentString(Config.untrackMessage)
@@ -68,6 +72,7 @@ RegisterCommand('untrack', function(source, args, rawCommand)
         TriggerClientEvent("chatMessage", source, "^1You don't have permission to use /untrack.")
     end
 end, false)
+
 
 -- Remove any existing blips when a player disconnects
 AddEventHandler("playerDropped", function()
